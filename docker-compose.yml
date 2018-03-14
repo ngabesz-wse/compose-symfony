@@ -19,17 +19,17 @@ services:
             - ./tests:/var/www/tests
             - ./vendor:/var/www/vendor
             - ./web:/var/www/web
-            - ./var/bootstrap.php.cache:/var/www/var/bootstrap.php.cache
+            - ./var:/var/www/var
         env_file:
             - php-variables.env
+        links:
+         - db:db
     db:
-        image: postgres:10.1
-        environment:
-            POSTGRES_USER: symfony
-            POSTGRES_PASSWORD: symfony
-            POSTGRES_DB: symfony
-            # default database user name for psql client
-            PGUSER: symfony
+        image: mongo:latest
+        volumes:
+          - ./data/mongodb:/data/db
+        ports:
+            - 27017:27017
     composer:
         image: composer
         volumes:
