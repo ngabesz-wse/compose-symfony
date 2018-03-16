@@ -1,0 +1,26 @@
+{
+  "name": "my_pack",
+  "version": "1.0.0",
+  "dependencies": {
+    "webpack": "^4.1.1"
+  },
+  "description": "web project starter",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

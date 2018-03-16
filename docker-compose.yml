@@ -15,11 +15,14 @@ services:
             - ./bin:/var/www/bin
             - ./composer.json:/var/www/composer.json
             - ./composer.lock:/var/www/composer.lock
+            - ./package.json:/var/www/package.json
+            - ./package-lock.json:/var/www/package-lock.json
+            - ./node_modules:/var/www/node_modules
             - ./src:/var/www/src
             - ./tests:/var/www/tests
             - ./vendor:/var/www/vendor
             - ./web:/var/www/web
-            - ./var:/var/www/var
+            - .:/var/www/
         env_file:
             - php-variables.env
         links:

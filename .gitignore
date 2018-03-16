@@ -16,4 +16,5 @@
 /web/bundles/
 /data/mongodb/*
 !/data/mongodb/.gitkeep
+/node_modules
 .idea/*
