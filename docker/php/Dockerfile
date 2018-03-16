@@ -1,7 +1,6 @@
-FROM php:7.2.0-fpm
+FROM php:7.2-fpm
 
 COPY config/php.ini /usr/local/etc/php/
-
 
 # see https://github.com/docker-library/php/issues/307
 RUN curl -sS -o /tmp/icu.tar.gz -L http://download.icu-project.org/files/icu4c/59.1/icu4c-59_1-src.tgz && \
@@ -19,9 +18,10 @@ RUN docker-php-ext-enable opcache.so
 #    apt-get install -y libpq-dev && \
 #    docker-php-ext-install pdo_pgsql
 
-#COPY config/mongodb.ini /usr/local/etc/php/conf.d/
 
+RUN apt-get update && apt-get install -y wget gnupg
 
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs
 
 RUN pecl channel-update pecl.php.net && \
     pecl install mongodb && \

@@ -5,3 +5,4 @@ parameters:
     mailer_user: '%env(MAILER_USER)%'
     mailer_password: '%env(MAILER_PASSWORD)%'
     secret: faba3c4498ec46447610ed1f7544c4e2d2ed52c8
+    mongodb_server: "mongodb://db:27017"
